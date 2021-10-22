@@ -4,7 +4,7 @@
 	<title></title>
 	<?php include 'link/links.php'; ?>
 	<?php include 'css/style.php'; ?>
-	<?php include 'animation/anime.php'; ?>
+	<?php include 'anime/anime.php'; ?>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg nav_style  p-3">
@@ -360,11 +360,6 @@
 
 
 
-<footer class="mt-5">
-	<div class="footer_style text-white text-center container-fluid">
-		<p>copywrite by </p>
-	</div>
-</footer>
 
 
 <script>
