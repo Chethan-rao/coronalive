@@ -254,37 +254,38 @@
 			<tr>
 				<th class="text-capitalize">Last update time</th>
 				<th class="text-capitalize">State</th>
-				<th class="text-capitalize">Confirmed</th>
 				<th class="text-capitalize">Active</th>
 				<th class="text-capitalize">Recovered</th>
 				<th class="text-capitalize">Deaths</th>
+				<th class="text-capitalize">Total cases</th>
 			</tr>
 
 			<?php
-				$data = file_get_contents('https://api.covid19india.org/data.json');
-				$coronaalive = json_decode($data,true);
-				
+				$data = file_get_contents('https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disabledRedirect=true');
+				$coronalive = json_decode($data,true);
+				$lastupdatetime = $coronalive['lastUpdatedAtApify'];
+				$lastupdatetime = substr($lastupdatetime, 0,10);
 
-				$statescount = count($coronaalive['statewise']);
+				$statescount = count($coronalive['regionData']);
 
-				$i=1;
+				$i=0;
 				while($i<$statescount){
 
 					?>
-
 					<tr>
-						<td><?php echo $coronaalive['statewise'][$i]['lastupdatedtime'] ?></td>
-						<td><?php echo $coronaalive['statewise'][$i]['state'] ?></td>
-						<td><?php echo $coronaalive['statewise'][$i]['confirmed'] ?></td>
-						<td><?php echo $coronaalive['statewise'][$i]['active'] ?></td>
-						<td><?php echo $coronaalive['statewise'][$i]['recovered'] ?></td>
-						<td><?php echo $coronaalive['statewise'][$i]['deaths'] ?></td>
-					</tr>
-					
+						<td><?php echo $lastupdatetime?></td>
+						<td><?php echo $coronalive['regionData'][$i]['region']?></td>
+						<td><?php echo $coronalive['regionData'][$i]['activeCases']?></td>
+						<td><?php echo $coronalive['regionData'][$i]['recovered']?></td>
+						<td><?php echo $coronalive['regionData'][$i]['deceased']?></td>
+						<td><?php echo $coronalive['regionData'][$i]['totalInfected']?></td>
 
+					</tr>
+				
 					<?php
 					$i++;
 				}
+		
 
 			?>
 		</table>
