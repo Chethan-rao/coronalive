@@ -1,1 +1,5 @@
 # coronalive
+
+The "Covid-19 Live stats tracker" project is a web application that tracks live statistics related to the COVID-19 pandemic. The application fetches information from a public API to display various COVID-19 related information. The website is hosted on AWS cloud, which provides automatic scaling capabilities to handle increases in traffic. The application is dynamic and scalable, and it is hosted on the AWS cloud for better accessibility and scalability. Additionally, a framework has been implemented to collect form responses from users into a MySQL database to report any COVID-19 symptoms.
+
+The use case of the COVID-19 Live stats tracker project could be for individuals or organizations who are interested in tracking the latest statistics related to the COVID-19 pandemic. The website allows users to view up-to-date information on cases, deaths, and recoveries globally, as well as information on specific states. Additionally, the form response collection feature can be used by healthcare organizations or governments to track an infected person and treat them before it spreads.
